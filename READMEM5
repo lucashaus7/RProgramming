@@ -1,0 +1,30 @@
+# Create matrices A and B
+A = matrix(1:100, nrow=10)
+B = matrix(1:1000, nrow=10)
+
+# Transpose A and B
+A = t(A)
+B = t(B)
+
+# Create two vectors a and b
+a = 1:10
+b = 11:20
+
+# Multiply matrices by vectors with X and Y
+X = A * a
+Y = B * b
+
+# Re-assign the vectors a and b to equal the number of rows of the column for the corresponding matrix
+a = 1:nrow(X)
+b = 1:nrow(Y)
+
+# Multiply the matrix by a matrix using %*%
+A = A %*% B
+
+# Inverse a matrix
+S = matrix(a, nrow=2)
+S_inv = solve(S)
+
+# Check the determinant of S
+det_S = det(S)
+det_s
