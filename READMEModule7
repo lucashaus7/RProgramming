@@ -1,0 +1,54 @@
+manufacturers <- c("Manufacturer A", "Manufacturer B", "Manufacturer C", "Manufacturer D", "Manufacturer E")
+> generate_sales_data <- function(manufacturer) {
++   set.seed(123)
++   sales <- sample(100:500, 12, replace = TRUE)
++   
++   data.frame(month = 1:12, sales = sales, manufacturer = manufacturer)
++ }
+> boat_sales <- lapply(manufacturers, generate_sales_data)
+> boat_sales <- do.call(rbind, boat_sales)
+> head(boat_sales)
+
+/////S3 and S4 examples
+////S3 Example
+
+/// generic function for adding two objects
+add <- function(x, y) {
+  UseMethod("add")
+}
+
+/// Define methods for integers and characters
+add.integer <- function(x, y) {
+  x + y
+}
+
+add.character <- function(x, y) {
+  paste(x, y)
+}
+
+ 
+
+///S4 example
+/// generic function for computing the absolute value of an object
+setGeneric("my_abs", function(x) {
+  standardGeneric("my_abs")
+})
+
+# class hierarchy for objects 
+setClass("my_abs_class", representation(value="numeric"))
+setClass("my_abs_negative", contains="my_abs_class")
+setClass("my_abs_positive", contains="my_abs_class")
+
+# Define methods forf abs
+setMethod("my_abs", "my_abs_negative", function(x) {
+  -x@value
+})
+
+setMethod("my_abs", "my_abs_positive", function(x) {
+  x@value
+})
+
+# Create objects of different classes
+neg_obj <- new("my_abs_negative", value=-5)
+pos_obj <- new("my_abs_positive", value=5)
+
