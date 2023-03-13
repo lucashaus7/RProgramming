@@ -1,0 +1,9 @@
+
+
+hist(possum_1_$totlngth, main = "Total Length distribution", xlab = "Total Length (mm)", ylab = "Frequency")
+
+sex_counts <- table(possum_1_$sex)
+barplot(sex_counts, main = "Distribution of Sex", xlab = "Sex", ylab = "Count")
+
+plot(possum_1_$footlgth, possum_1_$totlngth, main = "Total Length vs Foot Length", xlab = "Foot Length (mm)", ylab = "Total Length (mm)")
+
