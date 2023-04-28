@@ -1,7 +1,5 @@
 #' Generate fake data about the tank environment
 #'
-#' This function generates fake data about the tank environment, including temperature, oxygen content, last time fed, and current speed.
-#'
 #' @param n The number of observations to generate
 #' @return A data frame with columns for temperature, oxygen, last fed, and speed
 #'
