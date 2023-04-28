@@ -1,0 +1,4 @@
+As someone who wishes to enter the field of aquaculture and manage their data, I created a R package that simulates some of the similar code I may work with in the future.
+This package is to simulalte a package a hatchery manager might make use of when managing the data from their fish tanks. It contains a few functions of note that 
+a manage might want and also genereates some fake data as an example of how it might look on the managers end. In the fish tanks the three most important values are the 
+sizeand weight of the fish and the value selling the fish at their size and weight will return. As such there are three functions which pertain to those values.
